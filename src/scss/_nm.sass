@@ -1,0 +1,16 @@
+$step: 5
+$max: 100
+$directions: top, right, bottom, left
+
+@each $dir in $directions
+  @for $i from 0 through $max
+    @if $i % $step == 0
+      @if $i < 10
+        .nm#{str-slice($dir,1,1)}0#{$i}
+          margin-#{$dir}: -#{$i}px !important
+      @else if $i < 100
+        .nm#{str-slice($dir,1,1)}#{$i}
+          margin-#{$dir}: -#{$i}px !important
+      @else
+        .nm#{str-slice($dir,1,1)}#{$i}
+          margin-#{$dir}: -#{$i}px !important
