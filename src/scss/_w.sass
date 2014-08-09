@@ -1,16 +1,16 @@
 $step: 5
 $max: 900
 
-.wAuto
+.u-wAuto
   width: auto !important
 @for $i from 0 through $max
   @if $i % $step == 0
     @if $i < 10
-      .w00#{$i}
+      .u-w00#{$i}
         width: #{$i}px
     @else if $i < 100
-      .w0#{$i}
+      .u-w0#{$i}
         width: #{$i}px
     @else
-      .w#{$i}
+      .u-w#{$i}
         width: #{$i}px
