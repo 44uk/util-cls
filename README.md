@@ -23,12 +23,18 @@ _clear.sass
 
 clearfix 定義
 
+* u-clearfix
+* u-clear
 
 
 _display.sass
 ----------------------------------------
 
 表示プロパティ定義
+
+* u-dispN
+* u-dispB
+* u-dispI
 
 
 
@@ -48,9 +54,32 @@ _font.sass
 
 フォントプロパティ定義
 
+### フォントサイズ
+
 * u-fs9
 * ...
 * u-fs92
+
+
+
+### フォントウェイト
+
+* u-fwN
+* u-fwB
+* u-fwI
+
+
+
+### フォントファミリー
+
+* u-ffGothic
+* u-ffMincho
+* u-ffMono
+* u-ffMacosx
+* u-ffGothicModern
+* u-ffMinchoModern
+* u-ffMonoModern
+* u-ffMacosxModern
 
 
 
@@ -128,12 +157,20 @@ _ta.sass
 
 テキストアライン定義
 
+* u-taL
+* u-taC
+* u-taR
+
 
 
 _td.sass
 ----------------------------------------
 
 テキストデコレーション定義
+
+* u-tdU
+* u-tdS
+* u-tdN
 
 
 
@@ -143,11 +180,8 @@ _w.sass
 幅プロパティ定義
 
 * u-w005
-* .
-* .
-* .
+* ...
 * u-w900
-
 
 
 
