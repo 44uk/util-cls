@@ -17,6 +17,7 @@
     "gulp-autoprefixer": "0.0.8",
     "gulp-cssmin": "~0.1.6",
     "gulp-clean": "~0.3.1",
-    "gulp-sass": "~0.7.2"
+    "gulp-sass": "~0.7.2",
+    "gulp-compass": "~1.2.0"
   }
 }
