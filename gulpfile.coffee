@@ -1,20 +1,30 @@
+bourbon  = require 'node-bourbon'
 gulp     = require('gulp')
 gulputil = require('gulp-util')
-clean    = require('gulp-clean')
 sass     = require('gulp-sass')
 prefix   = require('gulp-autoprefixer')
-cssmin   = require('gulp-cssmin')
+csso     = require('gulp-csso')
+csscomb  = require('gulp-csscomb')
 rename   = require('gulp-rename')
-compass  = require('gulp-compass')
 
 gulp.task 'compile', ->
-  gulp.src('./src/scss/main.sass')
-    .pipe sass(includePaths: ['./src/scss'])
-    .pipe prefix("> 1%")
-    .pipe rename('util-cls.css')
-    .pipe gulp.dest('./src/css')
-    .pipe cssmin(keepSpecialComments: 0)
-    .pipe rename('util-cls.min.css')
-    .pipe gulp.dest('./src/css')
+  gulp.src('./src/main.sass')
+    .pipe sass(
+      style: 'expanded'
+      precision: 10
+      sourceComments: 'normal'
+      includePaths: bourbon.includePaths
+      errLogToConsole: true
+    )
+    .pipe prefix(
+      cascade: true
+      "last 2 versions"
+    )
+    .pipe csscomb()
+    .pipe rename('utilCls.css')
+    .pipe gulp.dest('./dst')
+    .pipe csso()
+    .pipe rename('utilCls.min.css')
+    .pipe gulp.dest('./dst')
 
 gulp.task 'default', ['compile']

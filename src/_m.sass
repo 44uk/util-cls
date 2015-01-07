@@ -7,8 +7,9 @@ $directions: top, right, bottom, left
 @each $dir in $directions
   @for $i from 0 through $max
     @if $i % $step == 0
+      $prefix: str-slice($dir,1,1)
       @if $i < 10
-        .u-m#{str-slice($dir,1,1)}0#{$i}
+        .u-m#{$prefix}0#{$i}
           margin-#{$dir}: #{$i}px !important
       @else if $i < 100
         .u-m#{str-slice($dir,1,1)}#{$i}
